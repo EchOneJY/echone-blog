@@ -56,7 +56,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v5.0.3
         with:
           # Private key part of an SSH key pair
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY_COMPANY }}
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           # Remote host
           REMOTE_HOST: ${{ secrets.HOST }}
           # Remote user
@@ -64,7 +64,7 @@ jobs:
           # Source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`
           SOURCE: "docs/.vitepress/dist/"
           # Target directory
-          TARGET: "home/www/website"
+          TARGET: "/home/www/website"
 
   # 部署工作
   deploy:
