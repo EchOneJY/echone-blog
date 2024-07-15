@@ -56,7 +56,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v5.0.3
         with:
           # Private key part of an SSH key pair
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_TOKEN_COMPANY }}
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY_COMPANY }}
           # Remote host
           REMOTE_HOST: ${{ secrets.HOST }}
           # Remote user
