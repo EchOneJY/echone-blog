@@ -50,15 +50,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist        
-      - name: deploy aliyun
-        uses: easingthemes/ssh-deploy@v5.0.3      #action
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY_COMPANY }}  #秘钥
-          SOURCE: "./docs/.vitepress/dist/"
-          ARGS: "-avzr --delete --exclude '.user.ini'"
-          REMOTE_HOST: ${{ secrets.HOST }}    # ip
-          REMOTE_USER: "git"    # 账号
-          TARGET: ${{ secrets.TARGET }}       # 部署路径
   # 部署工作
   deploy:
     environment:
