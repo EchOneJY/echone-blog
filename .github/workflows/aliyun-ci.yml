@@ -40,7 +40,7 @@ jobs:
         run:  pnpm docs:build
        # 部署到阿里云
       - name: Deploy to Aliyun
-        uses: easingthemes/ssh-deploy@v2.2.11
+        uses: easingthemes/ssh-deploy@v5.0.3
         env:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY_COMPANY }}
