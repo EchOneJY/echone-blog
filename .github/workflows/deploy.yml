@@ -64,7 +64,7 @@ jobs:
           # Source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`
           SOURCE: "docs/.vitepress/dist/"
           # Target directory
-          TARGET: "/home/www/website"
+          TARGET: "/home/www/website/dist"
 
   # 部署工作
   deploy:
