@@ -60,7 +60,7 @@ jobs:
           # Remote host
           REMOTE_HOST: ${{ secrets.HOST }}
           # Remote user
-          REMOTE_USER: "git"
+          REMOTE_USER: "root"
           # Source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`
           SOURCE: "docs/.vitepress/dist/"
           # Target directory
