@@ -6,9 +6,8 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { Layout } from '@/theme'
-// import 'vitepress/dist/client/theme-default/styles/base.scss';
 
 export default {
-  extends: DefaultTheme,
   Layout,
+  extends: DefaultTheme, 
 } satisfies Theme

@@ -1,12 +1,9 @@
-<template>
-    <div>
-        <h1>Custom Layout!</h1>
-        <Content class="vp-doc"/>
-    </div>
-</template>
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { frontmatter } = useData()
+<script lang="ts" setup>
+import WrapperPost from './components/WrapperPost.vue'
 </script>
+
+<template>
+  <div>
+    <WrapperPost />
+  </div>
+</template>

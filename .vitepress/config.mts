@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'node:path';
+import AutoImport from 'unplugin-auto-import/vite'
+// import Vue from '@vitejs/plugin-vue'
 
 const pathResolve = (pathname: string) => resolve(process.cwd(), '.', pathname);
 
@@ -17,5 +19,21 @@ export default defineConfig({
         '@': pathResolve('src'),
       },
     },
+    optimizeDeps: {
+      include: [
+        'vue',
+        '@vueuse/core',
+        'dayjs',
+        'dayjs/plugin/localizedFormat',
+      ],
+    },
+    plugins: [
+      AutoImport({
+        imports: [
+          'vue',
+          '@vueuse/core',
+        ],
+      }),
+    ]
   }
 })
