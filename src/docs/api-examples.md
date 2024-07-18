@@ -1,5 +1,5 @@
 ---
-outline: deep
+layout: page
 ---
 
 # Runtime API Examples
