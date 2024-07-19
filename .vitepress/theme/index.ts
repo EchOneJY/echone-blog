@@ -5,9 +5,23 @@
 
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import NProgress from 'nprogress'
 import { Layout } from '@/theme'
+import '@unocss/reset/tailwind.css'
+import './custom.css'
+
+import 'uno.css'
 
 export default {
   Layout,
-  extends: DefaultTheme, 
+  enhanceApp({ router }) {
+    router.onBeforeRouteChange = () => {
+      NProgress.start()
+    }
+
+    router.onAfterRouteChanged = () => {
+      NProgress.done()
+    }
+  },
+  extends: DefaultTheme,
 } satisfies Theme

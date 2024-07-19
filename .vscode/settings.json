@@ -35,7 +35,8 @@
     "markdown",
     "json",
     "jsonc",
-    "yaml"
+    "yaml",
+    "css"
   ],
   "grammarly.selectors": [
     {
