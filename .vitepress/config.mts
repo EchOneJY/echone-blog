@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import { defineConfig } from 'vitepress'
 import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
 
 const pathResolve = (pathname: string) => resolve(process.cwd(), '.', pathname)
@@ -11,8 +12,6 @@ export default defineConfig({
   description: 'Keep Coding And Learning',
   srcDir: './src/docs',
   cleanUrls: true,
-  ignoreDeadLinks: true, // 忽
-  themeConfig: {},
   vite: {
     resolve: {
       alias: {
@@ -35,6 +34,15 @@ export default defineConfig({
           'vue',
           '@vueuse/core',
         ],
+        dts: '../../auto-imports.d.ts',
+      }),
+
+      Components({
+        dirs: ['../theme'],
+        extensions: ['vue'],
+        deep: true,
+        dts: '../../components.d.ts',
+        include: [/\.vue$/, /\.vue\?vue/],
       }),
     ],
   },

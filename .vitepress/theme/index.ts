@@ -8,20 +8,23 @@ import DefaultTheme from 'vitepress/theme'
 import NProgress from 'nprogress'
 import { Layout } from '@/theme'
 import '@unocss/reset/tailwind.css'
-import './custom.css'
+import '@/styles/custom.css'
+import '@/styles/prose.css'
 
 import 'uno.css'
 
 export default {
+  extends: DefaultTheme,
   Layout,
   enhanceApp({ router }) {
-    router.onBeforeRouteChange = () => {
-      NProgress.start()
-    }
+    if (!import.meta.env.SSR) {
+      router.onBeforeRouteChange = () => {
+        NProgress.start()
+      }
 
-    router.onAfterRouteChanged = () => {
-      NProgress.done()
+      router.onAfterRouteChanged = () => {
+        NProgress.done()
+      }
     }
   },
-  extends: DefaultTheme,
 } satisfies Theme

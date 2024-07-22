@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vitepress'
+import LogoImage from '@/assets/images/logo.jpg'
 
 const router = useRouter()
 function toTop() {
@@ -17,13 +18,16 @@ const { y: scroll } = useWindowScroll()
 
 <template>
   <header class="header z-40">
-    <RouterLink
+    <a
       class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none"
       to="/"
       focusable="false"
     >
-      <Logo />
-    </RouterLink>
+      <img
+        :src="LogoImage"
+        mode="scaleToFill"
+      >
+    </a>
     <button
       title="Scroll to top"
       fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full

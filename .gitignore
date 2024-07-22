@@ -1,5 +1,7 @@
-**/node_modules
+node_modules
 
-**/.vitepress/cache
-**/.vitepress/dist
+.vitepress/cache
+.vitepress/dist
 
+components.d.ts
+auto-imports.d.ts

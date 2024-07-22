@@ -1,5 +1,9 @@
 ---
-layout: page
+title: 聊聊纯 CSS 图标
+date: 2021-10-31T16:00:00Z
+lang: zh
+duration: 10min
+description: 纯 CSS 中的图标解决方案
 ---
 
 # Runtime API Examples
