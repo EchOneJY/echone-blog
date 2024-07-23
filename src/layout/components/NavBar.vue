@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vitepress'
-import LogoImage from '@/assets/images/logo.jpg'
+// import LogoImage from '@/assets/images/logo.jpg'
 
 const router = useRouter()
 function toTop() {
@@ -23,10 +23,10 @@ const { y: scroll } = useWindowScroll()
       to="/"
       focusable="false"
     >
-      <img
+      <!-- <img
         :src="LogoImage"
         mode="scaleToFill"
-      >
+      > -->
     </a>
     <button
       title="Scroll to top"
@@ -48,22 +48,6 @@ const { y: scroll } = useWindowScroll()
           <!-- <span class="lt-md:hidden">Projects</span> -->
           <div i-ri-lightbulb-line />
         </div>
-        <!-- <RouterLink to="/talks" class="lt-md:hidden" title="Talks">
-          Talks
-        </RouterLink>
-        <RouterLink to="/sponsors-list" title="Sponsors">
-          <span class="lt-md:hidden">Sponsors</span>
-          <div i-ri-heart-line class="md:hidden" />
-        </RouterLink>
-        <RouterLink to="/podcasts" class="lt-md:hidden" title="Podcasts">
-          <div i-ri-mic-line />
-        </RouterLink>
-        <RouterLink to="/demos" title="Demos">
-          <div i-ri-screenshot-line />
-        </RouterLink>
-        <RouterLink to="/chat" title="Let's Chat">
-          <div i-ri-chat-1-line />
-        </RouterLink>
         <a href="https://twitter.com/antfu7" target="_blank" title="Twitter" class="lt-md:hidden">
           <div i-ri-twitter-x-fill />
         </a>
@@ -73,7 +57,7 @@ const { y: scroll } = useWindowScroll()
         <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
           <div i-la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" />
         </a>
-        <ToggleTheme /> -->
+        <ToggleTheme />
       </div>
     </nav>
   </header>

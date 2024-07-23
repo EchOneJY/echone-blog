@@ -10,7 +10,7 @@ const pathResolve = (pathname: string) => resolve(process.cwd(), '.', pathname)
 export default defineConfig({
   title: 'Echone\'s Blog',
   description: 'Keep Coding And Learning',
-  srcDir: './src/docs',
+  srcDir: './docs',
   cleanUrls: true,
   vite: {
     resolve: {
@@ -34,14 +34,14 @@ export default defineConfig({
           'vue',
           '@vueuse/core',
         ],
-        dts: '../../auto-imports.d.ts',
+        dts: '../auto-imports.d.ts',
       }),
 
       Components({
-        dirs: ['../theme'],
+        dirs: ['../src/layout'],
         extensions: ['vue'],
         deep: true,
-        dts: '../../components.d.ts',
+        dts: '../components.d.ts',
         include: [/\.vue$/, /\.vue\?vue/],
       }),
     ],

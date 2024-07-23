@@ -1,3 +1,10 @@
+---
+title: About Yak Shaving
+date: 2021-05-19T16:00:00.000+00:00
+lang: en
+duration: 10min
+---
+
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
