@@ -3,6 +3,6 @@ layout: page
 title: Blog
 ---
 
-<SubNav />
+<!-- <SubNav /> -->
 
 <ListPosts only-date type="blog" />

@@ -45,6 +45,9 @@ importers:
       eslint-plugin-format:
         specifier: ^0.1.2
         version: 0.1.2(eslint@9.7.0)
+      markdown-it-table-of-contents:
+        specifier: ^0.6.0
+        version: 0.6.0
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -1864,6 +1867,10 @@ packages:
 
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
+
+  markdown-it-table-of-contents@0.6.0:
+    resolution: {integrity: sha512-jHvEjZVEibyW97zEYg19mZCIXO16lHbvRaPDkEuOfMPBmzlI7cYczMZLMfUvwkhdOVQpIxu3gx6mgaw46KsNsQ==}
+    engines: {node: '>6.4.0'}
 
   mdast-util-from-markdown@0.8.5:
     resolution: {integrity: sha512-2hkTXtYYnr+NubD/g6KGBS/0mFmBcifAsI0yIWRiRo0PjVs6SSOSOdtzbp6kSGnShDN6G5aWZpKQ2lWRy27mWQ==}
@@ -4525,6 +4532,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   mark.js@8.11.1: {}
+
+  markdown-it-table-of-contents@0.6.0: {}
 
   mdast-util-from-markdown@0.8.5:
     dependencies:

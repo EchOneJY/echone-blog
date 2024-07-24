@@ -20,6 +20,7 @@
     "@vitejs/plugin-vue": "^5.0.5",
     "eslint": "^9.7.0",
     "eslint-plugin-format": "^0.1.2",
+    "markdown-it-table-of-contents": "^0.6.0",
     "typescript": "^5.5.3",
     "unocss": "^0.61.5",
     "unplugin-auto-import": "^0.18.0",
