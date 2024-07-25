@@ -74,10 +74,13 @@ html:not(.dark) .shiki span {
   text-decoration: none;
   border-bottom: 1px solid rgba(125, 125, 125, 0.3);
   transition: border 0.3s ease-in-out;
+  color: var(--fg);
+  cursor: pointer;
 }
 
 .prose a:hover {
   border-bottom: 1px solid var(--fg);
+  color: var(--fg);
 }
 
 .prose a code {

@@ -12,11 +12,11 @@ const ArtComponent = computed(() => {
 </script>
 
 <template>
-  <ClientOnly v-if="ArtComponent">
+  <ClientOnly v-if="frontmatter.layout === 'page' && ArtComponent">
     <component :is="ArtComponent" />
   </ClientOnly>
   <div
-    v-if="frontmatter.display ?? frontmatter.title"
+    v-if="frontmatter.layout !== 'page' ?? frontmatter.title"
     class="prose m-auto mb-8"
     :class="[frontmatter.wrapperClass]"
   >

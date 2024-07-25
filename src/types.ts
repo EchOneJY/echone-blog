@@ -1,5 +1,4 @@
-export interface Post {
-  path: string
+export interface Frontmatter {
   title: string
   place?: string
   date: string
@@ -12,6 +11,11 @@ export interface Post {
   video?: boolean
   inperson?: boolean
   redirect?: string
+  draft?: boolean
+}
+
+export interface Post extends Frontmatter {
+  url: string
 }
 
 export interface Talk {

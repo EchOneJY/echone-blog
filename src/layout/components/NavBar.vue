@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useRouter } from 'vitepress'
 // import LogoImage from '@/assets/images/logo.jpg'
 
-const router = useRouter()
 function toTop() {
   window.scrollTo({
     top: 0,
@@ -10,9 +8,6 @@ function toTop() {
   })
 }
 
-function navigateTo(path: string) {
-  router.go(path)
-}
 const { y: scroll } = useWindowScroll()
 </script>
 
@@ -40,14 +35,14 @@ const { y: scroll } = useWindowScroll()
     <nav class="nav">
       <div class="spacer" />
       <div class="right" print:op0>
-        <div @click="navigateTo('/api-examples')">
-          <!-- <span class="lt-md:hidden">Blog</span> -->
-          <div i-ri-article-line />
-        </div>
-        <div @click="navigateTo('/markdown-examples')">
-          <!-- <span class="lt-md:hidden">Projects</span> -->
-          <div i-ri-lightbulb-line />
-        </div>
+        <Link to="/posts">
+          <span class="lt-md:hidden">Blog</span>
+          <!-- <div i-ri-article-line /> -->
+        </Link>
+        <Link to="/notes">
+          <span class="lt-md:hidden">Notes</span>
+          <!-- <div i-ri-lightbulb-line /> -->
+        </Link>
         <a href="https://twitter.com/antfu7" target="_blank" title="Twitter" class="lt-md:hidden">
           <div i-ri-twitter-x-fill />
         </a>

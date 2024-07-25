@@ -1,4 +1,13 @@
 // posts.data.js
+import { Frontmatter } from '@/types'
 import { createContentLoader } from 'vitepress'
 
-export default createContentLoader('posts/*.md', /* options */)
+export interface Data {
+    url: string
+    frontmatter: Frontmatter
+}
+
+declare const data: Data[]
+export { data }
+
+export default createContentLoader<Data[]>('posts/*.md')

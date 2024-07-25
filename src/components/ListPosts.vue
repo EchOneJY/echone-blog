@@ -9,9 +9,19 @@ const props = defineProps<{
   extra?: Post[]
 }>()
 
-const routes: Post[] = data
-
-console.log('data', data)
+// console.log('data', data)
+const routes = data.filter(i => i.url.startsWith('/posts') && i.frontmatter.date && !i.frontmatter.draft)
+  .map(i => ({
+    ...i.frontmatter,
+    url: i.url,
+    title: i.frontmatter.title,
+    date: i.frontmatter.date,
+    lang: i.frontmatter.lang,
+    duration: i.frontmatter.duration,
+    recording: i.frontmatter.recording,
+    redirect: i.frontmatter.redirect,
+    place: i.frontmatter.place,
+  }))
 
 const posts = computed(() =>
   [...(props.posts || routes), ...props.extra || []]
@@ -40,7 +50,7 @@ function getGroupName(p: Post) {
       </div>
     </template>
 
-    <template v-for="route, idx in posts" :key="route.path">
+    <template v-for="route, idx in posts" :key="route.url">
       <div
         v-if="!isSameGroup(route, posts[idx - 1])"
         select-none relative h20 pointer-events-none slide-enter
@@ -59,14 +69,14 @@ function getGroupName(p: Post) {
         }"
       >
         <component
-          :is="route.path.includes('://') ? 'a' : 'RouterLink'"
+          :is="route.url.includes('://') ? 'a' : 'Link'"
           v-bind="
-            route.path.includes('://') ? {
-              href: route.path,
+            route.url.includes('://') ? {
+              href: route.url,
               target: '_blank',
               rel: 'noopener noreferrer',
             } : {
-              to: route.path,
+              to: route.url,
             }
           "
           class="item block font-normal mb-6 mt-2 no-underline"
@@ -88,30 +98,10 @@ function getGroupName(p: Post) {
             </div>
 
             <div flex="~ gap-2 items-center">
-              <span
-                v-if="route.inperson"
-                align-middle op50 flex-none
-                i-ri:group-2-line
-                title="In person"
-              />
-              <span
-                v-if="route.recording || route.video"
-                align-middle op50 flex-none
-                i-ri:film-line
-                title="Provided in video"
-              />
-              <span
-                v-if="route.radio"
-                align-middle op50 flex-none
-                i-ri:radio-line
-                title="Provided in radio"
-              />
-
               <span text-sm op50 ws-nowrap>
                 {{ formatDate(route.date, true) }}
               </span>
               <span v-if="route.duration" text-sm op40 ws-nowrap>· {{ route.duration }}</span>
-              <span v-if="route.platform" text-sm op40 ws-nowrap>· {{ route.platform }}</span>
               <span v-if="route.place" text-sm op40 ws-nowrap md:hidden>· {{ route.place }}</span>
               <span
                 v-if="route.lang === 'zh'"
