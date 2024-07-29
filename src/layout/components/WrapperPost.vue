@@ -52,6 +52,6 @@ const ArtComponent = computed(() => {
     </p>
   </div>
   <main class="prose m-auto slide-enter-content">
-    <Content class="vp-doc" />
+    <Content />
   </main>
 </template>
