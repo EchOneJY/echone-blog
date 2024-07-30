@@ -6,6 +6,8 @@ duration: 10min
 description: 纯 CSS 中的图标解决方案
 ---
 
+[[toc]]
+
 # Runtime API Examples
 
 This page demonstrates usage of some of the runtime APIs provided by VitePress.

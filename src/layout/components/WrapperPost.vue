@@ -16,7 +16,7 @@ const ArtComponent = computed(() => {
     <component :is="ArtComponent" />
   </ClientOnly>
   <div
-    v-if="frontmatter.layout !== 'page' ?? frontmatter.title"
+    v-if="frontmatter.layout !== 'page' || frontmatter.title"
     class="prose m-auto mb-8"
     :class="[frontmatter.wrapperClass]"
   >
