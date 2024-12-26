@@ -14,6 +14,9 @@ export default defineConfig({
   srcDir: './docs',
   cleanUrls: true,
   ignoreDeadLinks: true,
+  themeConfig: {
+    logo: '/logo.svg',
+  },
   markdown: {
     config: (md) => {
       md.use(TOC, {

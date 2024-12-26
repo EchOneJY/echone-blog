@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import LogoImage from '@/assets/images/logo.jpg'
+import LogoImage from '@/assets/images/logo.png'
 
 function toTop() {
   window.scrollTo({
@@ -13,16 +13,17 @@ const { y: scroll } = useWindowScroll()
 
 <template>
   <header class="header z-40">
-    <a
-      class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none"
+    <Link
+      class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none cursor-pointer"
       to="/"
       focusable="false"
     >
-      <!-- <img
+      <img
+        class="logo"
         :src="LogoImage"
         mode="scaleToFill"
-      > -->
-    </a>
+      >
+    </Link>
     <button
       title="Scroll to top"
       fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full
@@ -65,8 +66,10 @@ const { y: scroll } = useWindowScroll()
 
 .logo {
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 1rem;
+  left: 1rem;
+  width: 24px;
+  height: 24px;
 }
 
 .nav {

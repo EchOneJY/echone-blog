@@ -9,6 +9,7 @@
     "@vueuse/core": "^10.11.0",
     "dayjs": "^1.11.12",
     "nprogress": "^0.2.0",
+    "p5i": "^0.6.0",
     "vue": "^3.4.33"
   },
   "devDependencies": {

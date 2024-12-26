@@ -4,7 +4,11 @@ import { formatDate } from '@/logics'
 
 const { frontmatter } = useData()
 const ArtComponent = computed(() => {
+  const art = frontmatter.value.art
   if (typeof window !== 'undefined') {
+    if (art === 'dots') {
+      return defineAsyncComponent(() => import('./ArtDots.vue'))
+    }
     return defineAsyncComponent(() => import('./ArtPlum.vue'))
   }
   return undefined
